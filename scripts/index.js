@@ -59,6 +59,42 @@ let filter = {
   devices: "",
   ustensils: [],
   ingredients: [],
+  search: "",
+};
+
+const handleSearch = () => {
+  const input = document.getElementById("search");
+  input.addEventListener("input", (e) => handleInput(e));
+
+  const handleInput = (e) => {
+    updateFilteredData();
+
+    const value = `${e.target.value}`;
+    const value2 = `${e.target.value.charAt(0).toUpperCase() + value.slice(1)}`;
+    const result = [];
+
+    if (value.length > 2) {
+      recipesData.map((recipe) => {
+        const check = () =>
+          recipe.ingredients.some((data) => data.ingredient.includes(value));
+        if (
+          recipe.name.includes(value || value2) ||
+          recipe.description.includes(value || value2) ||
+          recipe.appliance.includes(value || value2) ||
+          recipe.ustensils.forEach((item) => item.includes(value || value2)) ||
+          recipe.ingredients.every(check)
+        ) {
+          if (!result.includes(recipe)) {
+            return result.push(recipe);
+          }
+        }
+      });
+      recipesData = result;
+      Cards(recipesData);
+    } else {
+      updateFilteredData();
+    }
+  };
 };
 
 const handleFiltering = () => {
@@ -149,4 +185,5 @@ const init = () => {
   handleUpdateInput(ustensils, "ustensils");
   Cards(recipesData);
 };
+handleSearch();
 init();
