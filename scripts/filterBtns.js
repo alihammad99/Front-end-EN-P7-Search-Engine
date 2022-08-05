@@ -1,6 +1,11 @@
-import { handleDeleteFilter, updateFilteredData } from "./index.js";
+import {
+  handleDeleteFilter,
+  handleSearch,
+  updateFilteredData,
+} from "./index.js";
 
 const box = document.getElementById("section-filters-active");
+const searchInput = document.getElementById("search");
 
 const showFilters = (value, type) => {
   if (typeof value == "string") {
@@ -17,6 +22,7 @@ const showFilters = (value, type) => {
     btn.addEventListener("click", (e) => {
       handleDeleteFilter(e, "filter-btn-devices");
       updateFilteredData();
+      handleSearch();
     });
     box.appendChild(btn);
   } else if (value == null) {
@@ -44,6 +50,7 @@ const showFilters = (value, type) => {
             : "filter-btn-ustensils"
         );
         updateFilteredData();
+        handleSearch();
       });
 
       box.appendChild(btn);

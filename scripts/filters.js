@@ -1,4 +1,4 @@
-import { addToFiltersList, updateFilteredData } from "./index.js";
+import { addToFiltersList, handleSearch, updateFilteredData } from "./index.js";
 
 const ingredients = document.getElementById("filters-options-ingredients");
 const devices = document.getElementById("filters-options-devices");
@@ -8,6 +8,7 @@ const inputs = {
   devices: document.getElementById("filter-input-devices"),
   ustensils: document.getElementById("filter-input-ustensils"),
 };
+const searchInput = document.getElementById("search");
 
 const handleAddingFilters = (arr, type) => {
   let filters = arr.sort();
@@ -69,14 +70,17 @@ const addItems = (content, type) => {
       item.addEventListener("click", (e) => {
         addToFiltersList("ingredients", e);
         updateFilteredData();
+        handleSearch();
       });
       break;
 
     case "devices":
       item.className += " filters-option-item-devices";
+
       item.addEventListener("click", (e) => {
         addToFiltersList("devices", e);
         updateFilteredData();
+        handleSearch()
       });
       break;
 
@@ -85,6 +89,7 @@ const addItems = (content, type) => {
       item.addEventListener("click", (e) => {
         addToFiltersList("ustensils", e);
         updateFilteredData();
+        handleSearch()
       });
       break;
   }
