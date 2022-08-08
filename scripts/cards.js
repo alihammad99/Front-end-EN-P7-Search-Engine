@@ -1,4 +1,3 @@
-
 export const Cards = (recipes) => {
   document.getElementById("cards").innerHTML = "";
   recipes.map((recipe) => {
@@ -12,7 +11,7 @@ const addElements = (title, ingredients, time, description, recipe) => {
   recipe.ingredients.forEach((item) => {
     const { ingredientItem } = IngredientItems(ingredients);
     ingredientItem.innerHTML = `<strong>${item.ingredient}:</strong> ${
-      item.quantity
+      item.quantity ? item.quantity : "-"
     } ${item.unit ? item.unit : ""}`;
   });
   time.innerHTML = `<i class="bi bi-clock fw-bold"></i> ${recipe.time} min`;
@@ -32,7 +31,7 @@ const IngredientItems = (box) => {
 const createElements = () => {
   const cardSection = document.getElementById("cards");
   const box = document.createElement("div");
-  box.classList.add("col-4");
+  box.classList.add("col-12", "col-sm-6", "col-lg-4");
   const cardHolder = document.createElement("div");
   cardHolder.classList.add("col-content", "overflow-hidden");
   const photo = document.createElement("img");
@@ -73,4 +72,3 @@ const createElements = () => {
     description,
   };
 };
-

@@ -66,7 +66,7 @@ const addItems = (content, type) => {
 
   switch (type) {
     case "ingredients":
-      item.className += " filters-option-item-ingredients";
+      item.className += " filters-option-item-ingredients filter-item-primary fs-5";
       item.addEventListener("click", (e) => {
         addToFiltersList("ingredients", e);
         updateFilteredData();
@@ -75,7 +75,7 @@ const addItems = (content, type) => {
       break;
 
     case "devices":
-      item.className += " filters-option-item-devices";
+      item.className += " filters-option-item-devices filter-item-success fs-5";
 
       item.addEventListener("click", (e) => {
         addToFiltersList("devices", e);
@@ -85,7 +85,7 @@ const addItems = (content, type) => {
       break;
 
     case "ustensils":
-      item.className += " filters-option-item-ustensils";
+      item.className += " filters-option-item-ustensils filter-item-danger fs-5";
       item.addEventListener("click", (e) => {
         addToFiltersList("ustensils", e);
         updateFilteredData();

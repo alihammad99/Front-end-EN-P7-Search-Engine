@@ -5,7 +5,6 @@ import {
 } from "./index.js";
 
 const box = document.getElementById("section-filters-active");
-const searchInput = document.getElementById("search");
 
 const showFilters = (value, type) => {
   if (typeof value == "string") {
@@ -25,7 +24,7 @@ const showFilters = (value, type) => {
       handleSearch();
     });
     box.appendChild(btn);
-  } else if (value == null) {
+  } else if (value == "") {
     return;
   } else {
     value.map((item) => {
