@@ -1,12 +1,97 @@
-.form-input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: white;
-    opacity: 0.75; /* Firefox */
+.form-input::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 0.75; /* Firefox */
 }
 
-.form-input:-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: white;
+.form-input:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: white;
 }
 
-.form-input::-ms-input-placeholder { /* Microsoft Edge */
-    color: white;
+.form-input::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: white;
+}
+
+.btn-primary {
+  background-color: #3282f7;
+  border: none;
+}
+.btn-primary:hover {
+  background-color: #2d75e2;
+}
+.btn-filter-success,
+.btn-success {
+  background-color: #68d9a4;
+  border: none;
+}
+.btn-filter-success:hover,
+.btn-success:hover {
+  background-color: #5bc292;
+}
+.btn-danger {
+  background-color: #ed6454;
+  border: none;
+}
+.btn-danger:hover {
+  background-color: #db5b4c;
+}
+.filter-btn {
+  height: 3.7rem;
+}
+.filter-item-primary:hover {
+  background-color: #2d75e2;
+  cursor: pointer;
+}
+.filter-item-danger:hover {
+  background-color: #db5b4c;
+  cursor: pointer;
+}
+
+.filter-item-success:hover {
+  background-color: #5bc292;
+  cursor: pointer;
+}
+.filter-box-success {
+  background-color: #68d9a4;
+}
+.filter-box-danger {
+  background-color: #ed6454;
+}
+.filter-box-primary {
+  background-color: #3282f7;
+}
+
+.description {
+  height: 15rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.arrow {
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  color: #fff;
+  font-size: 1.1rem;
+  -webkit-text-stroke: 1px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.search-icon {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  color: rgb(0, 0, 0);
+  font-size: 1.1rem;
+  -webkit-text-stroke: 1px;
+  transform: translateY(-50%);
+}
+.search-form {
+  position: relative;
+}
+.search-form input {
+  background-color: #e7e7e7;
 }
