@@ -8,7 +8,6 @@ const inputs = {
   devices: document.getElementById("filter-input-devices"),
   ustensils: document.getElementById("filter-input-ustensils"),
 };
-const searchInput = document.getElementById("search");
 
 const handleAddingFilters = (arr, type) => {
   let filters = arr.sort();
