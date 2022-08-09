@@ -2,7 +2,7 @@
 This is project 7 of Openclassrooms front-end path<br/>
 I've created two branches, one for functional methods (forEach, map, ...etc) which named as <strong>functional-algorithm</strong>.<br/>
 The second branch is for regular loops (for, while, ...etc).<br/><br/>
-Algorithms test: https://jsben.ch/Gy4Zo
+Algorithms test: https://jsben.ch/Gy4Zo<br/>
 Here's a live demo: https://p7-searchtool-alihammad.netlify.app/
 <br/><br/>
 The project files are included in the deliverables section.
