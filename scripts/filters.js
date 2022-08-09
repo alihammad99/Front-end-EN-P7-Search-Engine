@@ -8,7 +8,6 @@ const inputs = {
   devices: document.getElementById("filter-input-devices"),
   ustensils: document.getElementById("filter-input-ustensils"),
 };
-const searchInput = document.getElementById("search");
 
 const handleAddingFilters = (arr, type) => {
   let filters = arr.sort();
@@ -28,10 +27,10 @@ const handleAddingFilters = (arr, type) => {
 const addFilters = (arr, type, from, to) => {
   const { box } = addColumn();
   const filters = [...arr].slice(from, to);
-  filters.forEach((filter) => {
+  for(let filter of filters) {
     const { item } = addItems(filter, type);
     box.appendChild(item);
-  });
+  }
 
   switch (type) {
     case "ingredients":

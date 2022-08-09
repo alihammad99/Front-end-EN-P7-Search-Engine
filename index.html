@@ -24,10 +24,16 @@
       <!-- menu -->
       <nav class="navbar navbar-light bg-white">
         <div class="d-flex flex-column w-100 m-0 pt-5">
-          <img src="./assets/logo.svg" width="250px" style="margin: 0 auto" />
+          <img
+            src="./assets/logo.svg"
+            alt="logo"
+            width="250"
+            style="margin: 0 auto"
+          />
           <!-- Search -->
           <form class="d-flex mt-4 w-100 search-form">
             <input
+              role="search"
               id="search"
               class="form-control p-3 w-100"
               type="search"
@@ -46,64 +52,64 @@
           <div class="dropdown me-4 my-4 col-12 col-md-3 col-lg-auto">
             <i class="bi bi-chevron-down arrow"></i>
             <input
+              role="search"
               id="filter-input-ingredients"
               type="text"
               class="form-control btn fs-5 btn-primary filter-btn text-white text-start dropdown-toggle form-input w-100"
               placeholder="Search in ingredients list"
               aria-label="Username"
-              aria-describedby="basic-addon1"
               data-bs-toggle="dropdown"
               aria-expanded="false"
               value="Ingredients"
             />
 
             <ul class="dropdown-menu filter-box-primary">
-              <div
+              <li
                 id="filters-options-ingredients"
                 class="d-flex flex-column flex-md-row"
-              ></div>
+              ></li>
             </ul>
           </div>
           <div class="dropdown me-4 my-4 col-12 col-md-3 col-lg-auto">
             <i class="bi bi-chevron-down arrow"></i>
             <input
+              role="search"
               id="filter-input-devices"
               type="text"
               class="form-control btn fs-5 btn-success btn-filter-success filter-btn text-white text-start dropdown-toggle form-input w-100"
               placeholder="Search in devices list"
               aria-label="Username"
-              aria-describedby="basic-addon1"
               data-bs-toggle="dropdown"
               aria-expanded="false"
               value="Devices"
             />
 
             <ul class="dropdown-menu filter-box-success">
-              <div
+              <li
                 id="filters-options-devices"
                 class="d-flex flex-column flex-md-row"
-              ></div>
+              ></li>
             </ul>
           </div>
           <div class="dropdown me-4 my-4 col-12 col-md-3 col-lg-auto">
             <i class="bi bi-chevron-down arrow"></i>
             <input
+              role="search"
               id="filter-input-ustensils"
               type="text"
               class="form-control btn fs-5 btn-danger filter-btn text-white text-start dropdown-toggle form-input w-100"
               placeholder="Search in ingredients list"
               aria-label="Username"
-              aria-describedby="basic-addon1"
               data-bs-toggle="dropdown"
               aria-expanded="false"
               value="Ustensils"
             />
 
             <ul class="dropdown-menu filter-box-danger">
-              <div
+              <li
                 id="filters-options-ustensils"
                 class="d-flex flex-column flex-md-row"
-              ></div>
+              ></li>
             </ul>
           </div>
         </div>
