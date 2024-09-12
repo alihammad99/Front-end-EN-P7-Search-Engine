@@ -1,19 +1,20 @@
 export const Cards = (recipes) => {
   document.getElementById("cards").innerHTML = "";
-  recipes.map((recipe) => {
+  for (let recipe of recipes) {
     const { title, ingredients, time, description } = createElements();
     addElements(title, ingredients, time, description, recipe);
-  });
+  }
 };
 
 const addElements = (title, ingredients, time, description, recipe) => {
   title.textContent = recipe.name;
-  recipe.ingredients.forEach((item) => {
+  for (let item of recipe.ingredients) {
     const { ingredientItem } = IngredientItems(ingredients);
     ingredientItem.innerHTML = `<strong>${item.ingredient}:</strong> ${
       item.quantity ? item.quantity : "-"
     } ${item.unit ? item.unit : ""}`;
-  });
+  }
+
   time.innerHTML = `<i class="bi bi-clock fw-bold"></i> ${recipe.time} min`;
   description.textContent = recipe.description;
 };

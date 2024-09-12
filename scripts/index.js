@@ -14,37 +14,39 @@ let ustensils = [];
 const searchInput = document.getElementById("search");
 searchInput.addEventListener("input", () => handleSearch());
 
-const ingredientsData = () =>
-  recipesData.forEach((recipe) => {
-    recipe.ingredients.forEach((data) => {
+const ingredientsData = () => {
+  for (let recipe of recipesData) {
+    for (let data of recipe.ingredients) {
       if (
         !ingredients.includes(data.ingredient) &&
         !filter.ingredients.includes(data.ingredient)
       ) {
-        return ingredients.push(data.ingredient);
+         ingredients.push(data.ingredient);
       }
-    });
-  });
+    }
+  }
+};
 
-const devicseData = () =>
-  recipesData.forEach((recipe) => {
+const devicseData = () => {
+  for (let recipe of recipesData) {
     if (
       !devices.includes(recipe.appliance) &&
       filter.devices !== recipe.appliance
     ) {
-      devices.push(recipe.appliance);
+       devices.push(recipe.appliance);
     }
-  });
+  }
+};
 
-const ustensilsData = () =>
-  recipesData.forEach((recipe) => {
-    recipe.ustensils.forEach((data) => {
+const ustensilsData = () => {
+  for (let recipe of recipesData) {
+    for (let data of recipe.ustensils) {
       if (!ustensils.includes(data) && !filter.ustensils.includes(data)) {
-        return ustensils.push(data);
+         ustensils.push(data);
       }
-    });
-  });
-
+    }
+  }
+};
 const updateFilteresItems = () => {
   ingredientsBox.innerHTML = "";
   devicesBox.innerHTML = "";
@@ -75,7 +77,7 @@ export const handleSearch = () => {
   const result = [];
 
   if (value.length > 2) {
-    recipesData.map((recipe) => {
+    for (let recipe of recipesData) {
       const check = () =>
         recipe.ingredients.some((data) => data.ingredient.includes(value));
       if (
@@ -86,10 +88,10 @@ export const handleSearch = () => {
         recipe.ingredients.every(check)
       ) {
         if (!result.includes(recipe)) {
-          return result.push(recipe);
+           result.push(recipe);
         }
       }
-    });
+    }
     recipesData = result;
     Cards(recipesData);
   } else {

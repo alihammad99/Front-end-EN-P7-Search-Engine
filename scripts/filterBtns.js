@@ -27,7 +27,7 @@ const showFilters = (value, type) => {
   } else if (value == "") {
     return;
   } else {
-    value.map((item) => {
+    for (let item of value) {
       const btn = document.createElement("button");
       btn.id =
         type == "ingredients"
@@ -53,7 +53,7 @@ const showFilters = (value, type) => {
       });
 
       box.appendChild(btn);
-    });
+    }
   }
 };
 
